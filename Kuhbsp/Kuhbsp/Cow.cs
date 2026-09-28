@@ -9,11 +9,23 @@ public class Cow:IEquatable<Cow>,IComparable<Cow>
 
     public bool Equals(Cow? other)
     {
-        throw new NotImplementedException();
+        if (other == null)
+            return false;
+
+        return Name == other.Name &&
+               Color == other.Color &&
+               Alter == other.Alter;
     }
 
     public int CompareTo(Cow? other)
     {
         throw new NotImplementedException();
     }
+    
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Name, Color, Alter);
+    }
+    
+    
 }
