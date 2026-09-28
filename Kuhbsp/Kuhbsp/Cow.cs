@@ -1,10 +1,12 @@
 ﻿namespace Kuhbsp;
 
-public class Cow:IEquatable<Cow>,IComparable<Cow>
+public class Cow : IEquatable<Cow>, IComparable<Cow>
 {
     public string Name { get; set; }
     public string Color { get; set; }
     public int Alter { get; set; }
+    public int Coolness { get; set; }
+    
 
     public Cow(string name, string color, int alter)
     {
@@ -27,7 +29,7 @@ public class Cow:IEquatable<Cow>,IComparable<Cow>
     {
         throw new NotImplementedException();
     }
-    
+
     public override int GetHashCode()
     {
         return HashCode.Combine(Name, Color, Alter);
@@ -37,3 +39,4 @@ public class Cow:IEquatable<Cow>,IComparable<Cow>
     {
         return $"{Name}, {Color}, {Alter}";
     }
+}
